@@ -1,8 +1,6 @@
-// js/gallery.js
-
 export function displayImages(images) {
   const gallery = document.querySelector('.image-gallery')
-  gallery.innerHTML = '' // Limpiar la galería existente
+  gallery.innerHTML = ''
 
   if (images.length === 0) {
     gallery.textContent = 'No se encontraron imágenes.'

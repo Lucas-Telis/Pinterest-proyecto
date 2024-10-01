@@ -5,7 +5,6 @@ import { debounce } from './search.js'
 export function createHeader(onSearch) {
   const header = document.createElement('header')
 
-  // Crear el logo
   const logoDiv = document.createElement('div')
   logoDiv.classList.add('logo')
   const logoImg = document.createElement('img')
@@ -14,7 +13,6 @@ export function createHeader(onSearch) {
   logoImg.alt = 'Pinterest logo'
   logoDiv.appendChild(logoImg)
 
-  // Crear los enlaces de navegación
   const navLinks = document.createElement('nav')
   navLinks.classList.add('nav-links')
 
@@ -33,8 +31,6 @@ export function createHeader(onSearch) {
     }
     navLinks.appendChild(a)
   })
-
-  // Crear la barra de búsqueda
   const searchBarDiv = document.createElement('div')
   searchBarDiv.classList.add('search-bar')
 
@@ -44,22 +40,20 @@ export function createHeader(onSearch) {
 
   const searchIcon = document.createElement('span')
   searchIcon.classList.add('search-icon')
-  searchIcon.textContent = '🔍' // Icono de búsqueda
+  searchIcon.textContent = '🔍'
 
   searchBarDiv.appendChild(searchInput)
   searchBarDiv.appendChild(searchIcon)
 
-  // Añadir evento de búsqueda con debounce (300ms)
   const debouncedSearch = debounce((event) => {
     const query = searchInput.value.trim()
     if (query) {
-      onSearch(query) // Llamar a la función de búsqueda
+      onSearch(query)
     }
   }, 300)
 
   searchInput.addEventListener('input', debouncedSearch)
 
-  // Crear los íconos de la derecha (notificaciones, chat)
   const iconsDiv = document.createElement('div')
   iconsDiv.classList.add('icons')
 
@@ -72,7 +66,7 @@ export function createHeader(onSearch) {
 
   const notificationCount = document.createElement('span')
   notificationCount.classList.add('notification-count')
-  notificationCount.textContent = '10' // Número de notificaciones
+  notificationCount.textContent = '10'
 
   bellDiv.appendChild(bellImg)
   bellDiv.appendChild(notificationCount)
@@ -85,12 +79,10 @@ export function createHeader(onSearch) {
   iconsDiv.appendChild(bellDiv)
   iconsDiv.appendChild(chatImg)
 
-  // Agregar todos los elementos al header
   header.appendChild(logoDiv)
   header.appendChild(navLinks)
   header.appendChild(searchBarDiv)
   header.appendChild(iconsDiv)
 
-  // Añadir el header al cuerpo del documento
   document.body.prepend(header)
 }

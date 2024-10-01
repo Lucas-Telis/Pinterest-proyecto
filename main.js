@@ -4,5 +4,5 @@ import { createGallery } from './src/components/gallery.js'
 
 createHeader(handleSearch)
 
-// Crear una galería vacía para las imágenes
+// galería vacía para las imágenes
 createGallery()
