@@ -1,5 +1,3 @@
-// js/search.js
-
 import { fetchImages } from '../js/api.js'
 import { displayImages } from './gallery.js'
 
