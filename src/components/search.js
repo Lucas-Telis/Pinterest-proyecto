@@ -12,3 +12,13 @@ export async function handleSearch(query) {
   const images = await fetchImages(query)
   displayImages(images)
 }
+
+export function handleSearchInput() {
+  const cleaInput = document.getElementById('miInput')
+  cleaInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+      event.preventDefault()
+      cleaInput.value = ''
+    }
+  })
+}

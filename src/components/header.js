@@ -1,6 +1,5 @@
-// js/header.js
-
 import { debounce } from './search.js'
+import { handleSearchInput } from './search.js'
 
 export function createHeader(onSearch) {
   const header = document.createElement('header')
@@ -37,6 +36,7 @@ export function createHeader(onSearch) {
   const searchInput = document.createElement('input')
   searchInput.type = 'text'
   searchInput.placeholder = 'Buscar'
+  searchInput.id = 'miInput'
 
   const searchIcon = document.createElement('span')
   searchIcon.classList.add('search-icon')
@@ -85,4 +85,5 @@ export function createHeader(onSearch) {
   header.appendChild(iconsDiv)
 
   document.body.prepend(header)
+  handleSearchInput()
 }
