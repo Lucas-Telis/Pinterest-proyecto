@@ -114,6 +114,21 @@ header {
   border-radius: 10px;
 }
 
+.suggestion-button {
+  background-color: #e60023;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.suggestion-button:hover {
+  background-color: #c2001a;
+}
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;
